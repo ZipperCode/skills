@@ -1,0 +1,57 @@
+{
+  "default_provider": "backup-duckmail",
+  "request_timeout": 30,
+  "wait_timeout": 120,
+  "wait_interval": 2,
+  "selection_strategy": "fallback",
+  "providers": [
+    {
+      "name": "primary-tempmail",
+      "type": "tempmail_lol",
+      "enable": false,
+      "priority": 100,
+      "api_key": "YOUR_API_KEY",
+      "domain": ["example.com", "*.example.net"]
+    },
+    {
+      "name": "backup-duckmail",
+      "type": "duckmail",
+      "enable": true,
+      "priority": 80,
+      "api_key": "YOUR_API_KEY",
+      "default_domain": "duckmail.sbs"
+    },
+    {
+      "name": "local-inbucket",
+      "type": "inbucket",
+      "enable": false,
+      "priority": 50,
+      "api_base": "http://127.0.0.1:9000",
+      "domain": ["example.test"],
+      "random_subdomain": true
+    },
+    {
+      "name": "backup-yyds",
+      "type": "yyds_mail",
+      "enable": false,
+      "priority": 70,
+      "api_key": "YOUR_API_KEY"
+    },
+    {
+      "name": "shared-gptmail",
+      "type": "gptmail",
+      "enable": false,
+      "priority": 65,
+      "api_key": "YOUR_API_KEY"
+    },
+    {
+      "name": "aliasvault-main",
+      "type": "aliasvault",
+      "enable": false,
+      "priority": 60,
+      "base_url": "https://app.aliasvault.net/api",
+      "username": "you@example.com",
+      "password": "YOUR_ALIASVAULT_PASSWORD"
+    }
+  ]
+}

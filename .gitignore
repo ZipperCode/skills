@@ -1,0 +1,6 @@
+.ace-tool/
+.serena/
+.DS_Store
+*.tmp
+*.bak
+*.swp
