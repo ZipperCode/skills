@@ -4,6 +4,12 @@
 
 ## Included Skills
 
+- `claude-code-api-compaction`
+- `claude-code-api-conversation`
+- `claude-code-api-request`
+- `claude-code-api-streaming`
+- `claude-code-api-tools`
+- `claude-code-llm-gateway`
 - `grill-me`
 - `herosms-api`
 - `sub2api-account-manager`
@@ -30,7 +36,7 @@ CLAUDE_SKILLS_DIR=/path/to/skills bash scripts/install.sh
 
 ## Sync From Local
 
-当本机 `~/.claude/skills` 中的这些 skill 有更新时，可以同步回仓库：
+当本机 `~/.claude/skills` 中的 skill 有更新时，可以同步回仓库：
 
 ```bash
 bash scripts/sync-from-local.sh
@@ -42,7 +48,7 @@ bash scripts/sync-from-local.sh
 SOURCE_SKILLS_DIR=/path/to/skills bash scripts/sync-from-local.sh
 ```
 
-同步脚本只处理白名单中的 5 个 skill，不会自动引入其他本地 skill。
+同步脚本会自动发现来源目录下包含 `SKILL.md` 的一级 skill 目录，并同步到仓库的 `skills/` 下。不会删除仓库里来源目录不存在的其他 skill。
 
 ## Notes
 
